@@ -1,0 +1,105 @@
+<html>
+<head>
+	<title>Pause</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<script src='jquery-1.4.2.min.js'></script>
+	<script src='http://github.com/tobia/Pause/raw/master/jquery.pause.min.js'></script>
+	<link rel='stylesheet' href='style.css'>
+	<style>
+		.demo {
+			width: 550px;
+		}
+		#box1, #box2, #box3 {
+			width: 100px;
+			height: 100px;
+			position: relative;
+		}
+		#box1 {
+			background: #0C0;
+		}
+		#box2 {
+			background: #090;
+		}
+		#box3 {
+			background: #060;
+		}
+	</style>
+	<script type="text/javascript">
+		$(function() {
+			function setupBox(i) {
+				var $box = $('#box' + i);
+				function phase1() {
+					$box.animate({ left: 450 }, 2000, 'swing', phase2);
+				}
+				function phase2() {
+					$box.animate({ left: 0 }, 2000, 'swing', phase1);
+				}
+				$box.hover(function() {
+					$box.pause();
+				}, function() {
+					$box.resume();
+				});
+				phase1();
+			}
+			setupBox(1);
+			setupBox(2);
+			setupBox(3);
+		});
+	</script>
+</head>
+<body>
+<div class=body>
+
+<h1>Pause</h1>
+<em>A jQuery plugin to pause and resume animations</em>
+
+<p class=menu>
+<a href='http://github.com/tobia/Pause'>Project page</a> –
+<a href='http://github.com/tobia/Pause/raw/master/jquery.pause.min.js'><b>Download minified</b></a> –
+<a href='http://github.com/tobia/Pause/raw/master/jquery.pause.js'>Download source</a> –
+<a href='http://github.com/tobia/Pause/issues'>Report issues</a>
+</p>
+<hr>
+
+<p>Pause is a <a href='http://jquery.com/'>jQuery</a> plugin that makes it
+possible to pause and resume jQuery animations. It does so by decorating
+(overriding) jQuery's <code>animate</code> method with its own, keeping track of
+running animations and of their progress.</p>
+
+<p>The code is loosely based on BOX's
+<a href="http://plugins.jquery.com/project/Pause-Resume-animation">
+Pause-Resume-animation plugin</a>, which unfortunately I found too buggy to be
+used in my own <a href="/CrossSlide/">CrossSlide</a> project, and so decided to
+rewrite it.</p>
+
+<p>The plugin overrides jQuery's default <code>animate()</code> method,
+so that any animation started after loading my plugin becomes pauseable. Two
+new methods are added to every jQuery object: <code>pause()</code> and
+<code>resume()</code>, with no parameters. Both the new <code>animate()</code>
+and the other methods can be applied to collection of objects and to objects in
+an incorrect state (eg. resuming something that wasn't paused) in a robust
+manner.</p>
+
+<h2>Example</h2>
+
+<p>Move your mouse over the boxes:</p>
+
+<div class=demo>
+<div id=box1></div>
+<div id=box2></div>
+<div id=box3></div>
+</div>
+
+<p>The animation is started with regular <code>animate()</code> calls. The
+interesting code is in the <code>hover</code> handler:</p>
+
+<pre><code>$box.hover(function() {
+  $box.pause();
+}, function() {
+  $box.resume();
+});
+</code></pre>
+
+</div>
+</body>
+</html>

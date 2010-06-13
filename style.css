@@ -1,0 +1,43 @@
+html, body {
+	background: #eaf2f5;
+	margin: 0;
+	padding: 0;
+}
+div.body {
+	background: white;
+	margin: 1em 10%;
+	padding: 0 1em;
+	border: 1px solid #bedce7;
+}
+a:link, a:visited {
+	color: #4183ca;
+}
+h1 {
+  margin: .5em 0;
+}
+h2, p, ul, ol, li, pre, hr {
+  margin: .8em 0;
+}
+em {
+  color: #555;
+}
+p.menu {
+	font-family: sans-serif;
+	font-size: 90%;
+}
+p.footer {
+	font-size: 90%;
+}
+div.demo {
+	border: 1px solid #555;
+  margin: 1em auto;
+}
+hr {
+	border: none;
+	color: #bedce7;
+	background-color: #bedce7;
+	height: 1px;
+}
+p {
+	text-align: justify;
+}
