@@ -3,6 +3,13 @@ html, body {
 	margin: 0;
 	padding: 0;
 }
+body {
+	/font-size: 105%;
+}
+code {
+	/font-size: 85%;
+	/font-family: 'Lucida Console';
+}
 div.body {
 	background: white;
 	margin: 1em 10%;
@@ -13,13 +20,17 @@ a:link, a:visited {
 	color: #4183ca;
 }
 h1 {
-  margin: .5em 0;
+	margin: .5em 0;
 }
 h2, p, ul, ol, li, pre, hr {
-  margin: .8em 0;
+	margin-top: .8em;
+	margin-bottom: .8em;
+}
+hr {
+	/margin: 0;
 }
 em {
-  color: #555;
+	color: #555;
 }
 p.menu {
 	font-family: sans-serif;
@@ -30,7 +41,22 @@ p.footer {
 }
 div.demo {
 	border: 1px solid #555;
-  margin: 1em auto;
+	margin: 1em auto;
+	width: 550px;
+}
+#box1, #box2, #box3 {
+	width: 100px;
+	height: 100px;
+	position: relative;
+}
+#box1 {
+	background: #0C0;
+}
+#box2 {
+	background: #090;
+}
+#box3 {
+	background: #060;
 }
 hr {
 	border: none;
