@@ -1,0 +1,59 @@
+<!DOCTYPE HTML >
+<html>
+	<head>
+		<script type="text/javascript" charset="utf-8" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="jquery.animation-controller.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			$(function() {
+				jQuery.fx.interval = 50;
+				$("#start").click(function() {
+					$(".block").animate({
+						"left" : "1000px"
+					}, 10000);
+				});
+				$("#pause").click(function() {
+					$(".block").pause();
+				});
+				$("#resume").click(function() {
+					$(".block").resume();
+				});
+				$("#ff").click(function() {
+					$("#block2").fastForward();
+				});
+				$("#rewind").click(function() {
+					$(".block").rewind();
+				});
+			})
+		</script>
+		<style>
+			div {
+				position: relative;
+				background-color: #abc;
+				left: 50px;
+				width: 90px;
+				height: 90px;
+				margin: 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="start">
+			开始动画 start
+		</button>
+		<button id="pause">
+			暂停 pause
+		</button>
+		<button id="resume">
+			恢复 resume
+		</button>
+		<button id="ff">
+			快进 ff
+		</button>
+		<button id="rewind">
+			倒退 rewind
+		</button>
+		<div class="block"></div>
+		<div class="block" id="block2"></div>
+		<div class="block"></div>
+	</body>
+</html>
