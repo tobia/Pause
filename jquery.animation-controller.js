@@ -113,7 +113,7 @@
 					elem.pn = n;
 					return true;
 				}else{
-					delete elem.pn;
+					elem.pn = false;
 				}
 				if(elem.ff){
 					var fftime = n+options.duration*ffrate;
