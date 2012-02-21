@@ -128,7 +128,6 @@
 				}else{
 					this.state = n / options.duration;
 				}
-				console.log('this.state : '+this.state);
 				//↑↑↑↑ code by filod ↑↑↑↑
 				
 				
