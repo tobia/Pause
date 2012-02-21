@@ -140,7 +140,7 @@
 		}
 
 		return true;
-	}
+	};
 	$.fn.pause = function() {
 		return this.each(function() {
 			if(!this['pausing']){
@@ -165,7 +165,7 @@
 				}
 			}
 		}); 
-	}
+	};
 	$.fn.rewind = function() {
 
 		return this.each(function() {
@@ -176,5 +176,5 @@
 			}
 			
 		});
-	}
+	};
 })(jQuery);
